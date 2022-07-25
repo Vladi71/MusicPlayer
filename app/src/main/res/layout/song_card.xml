@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/song_container"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@drawable/layout_back"
+    android:orientation="horizontal"
+    android:padding="@dimen/common_spacing">
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mb_play_pause"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:checkable="true"
+        android:contentDescription="@string/play"
+        style="@style/Theme.MyMusicPlayer.IconButton"
+        app:icon="@drawable/ic_play_black_and_white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_song_name"
+        android:layout_width="240dp"
+        android:layout_height="42dp"
+        android:singleLine="true"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/mb_like"
+        app:layout_constraintStart_toEndOf="@+id/mb_play_pause"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="@sample/posts.json/data/song_name" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/mb_like"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:checkable="true"
+        android:contentDescription="@string/like"
+        style="@style/Theme.MyMusicPlayer.IconButton"
+        app:icon="@drawable/like_unlike_selector"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_song_duration"
+        android:layout_width="100dp"
+        android:layout_height="16dp"
+        android:textAlignment="center"
+        android:textSize="12sp"
+        android:textStyle="italic"
+        android:visibility="gone"
+        app:layout_constraintEnd_toEndOf="@+id/tv_song_name"
+        app:layout_constraintTop_toBottomOf="@+id/tv_song_name"
+        tools:text="@sample/posts.json/data/duration" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
